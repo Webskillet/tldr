@@ -1,0 +1,306 @@
+/*
+Theme Name: TL;DR
+Author: Jonathan Kissam
+Author URI: http://www.jonathankissam.com/
+Description: Base Theme for Wordpress
+Version: 1.0
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+
+
+/**
+ * 1.0 Typography and Repeatable Patterns
+ * -----------------------------------------------------------------------------
+ */
+
+/* 1.1 Typography */
+
+body { color: #333; font: 62.5%/2em Arial, Helvetica, 'Helvetica Neue', sans-serif; }
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 { font-weight: normal; margin: 0 0 0.25em; font-family: Arial, Helvetica, 'Helvetica Neue', sans-serif; }
+h1 { font-size: 1.5em; }
+h2 { font-size: 1.333em; }
+h3 { font-size: 1.2em; }
+h4 { font-size: 1.066em; font-weight: bold; }
+h5, h6 { font-size: 0.8em; font-weight: bold; margin-bottom: 0; }
+
+/* Font Size */
+#header, #navigation, #primary, #secondary, #footer { font-size: 1.5em; }
+
+/* Text */
+p { margin-bottom: 1.5em; }
+p.leftalign { text-align: left; }
+p.centeralign { text-align: center; }
+p.rightalign { text-align: right; }
+address { font-style: normal; margin-bottom: 1.5em; }
+blockquote { margin: 0 0 0 2em; padding-bottom: 1.8em; }
+blockquote p { margin-bottom: 0.75em; }
+
+/* Lists */
+ul, ol { margin: 0 0 1.5em 2em; }
+ul ul, ul ol, ol ul, ol ol { margin-bottom: 0; }
+dl { margin: 0 0 1.5em 0; }
+dt { font-weight: bold; }
+dd { margin: 0 0 1.5em 2em; }
+dd ul, dd ol { margin-left: 0; }
+
+/* Links */
+a { text-decoration: none; }
+a:link { color: #1280c9; }
+a:visited { color: #1280c9; }
+.no-touch a:hover { color: #cc0000; }
+a:active { color: #1280c9; }
+#main .field-name-body a { text-decoration: underline; }
+
+/* Images */
+img { max-width: 100%; height: auto !important; }
+.alignleft,
+.alignright,
+.aligncenter { display: block; width: auto; margin: 0 auto 1.5em; } /* mobile-first: center everything; we'll align stuff later in the media queries */
+
+/* Tables */
+th, td { padding: 10px; }
+
+/* Forms */
+
+input, select, textarea { border: 1px solid #ccc; color: #333; padding: 2px; font-family: Arial, Helvetica, 'Helvetica Neue', sans-serif; outline: 0; box-shadow: 0 1px 1px #eee inset; -moz-box-shadow: 0 1px 1px #eee inset; -webkit-box-shadow: 0 1px 1px #eee inset; }
+input:focus, select:focus, textarea:focus { box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; border-color: #1280c9; }
+input[type="checkbox"],input[type="radio"],input[type="submit"],input[type="image"] { width: auto; }
+input[type="image"] { border: 0; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; outline: invert none medium; }
+input[type="search"] { -webkit-appearance: none; moz-appearance: none; }
+input, select { max-width: 400px; }
+
+input[type="submit"], button, a.button {
+  background: #dddddd; /* for non-css3 browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dddddd', endColorstr='#ededed');
+  background: -webkit-gradient(linear, left top, left bottom, from(#dddddd), to(#ededed));
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  color: #000;
+  padding: 6px 10px;
+  margin-right: 1em;
+  text-shadow: 1px 1px 1px #fff;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  cursor: pointer;
+  text-underline: none;
+}
+.no-touch input[type="submit"]:hover, .no-touch button:hover, .no-touch a.button:hover {
+  background: #ededed;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dddddd');
+  background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#dddddd));
+  background: -moz-linear-gradient(top,  #ededed,  #dddddd);
+  color: #000;
+  text-decoration: none;
+}
+
+/* Make sure embeds and iframes fit their containers */
+
+embed,
+iframe,
+object,
+video {
+	margin-bottom: 24px;
+	max-width: 100%;
+}
+
+p > embed,
+p > iframe,
+p > object,
+span > embed,
+span > iframe,
+span > object {
+	margin-bottom: 0;
+}
+
+/* WP captions & images */
+
+.wp-caption {
+	margin-bottom: 1.5em;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 0;
+}
+
+.wp-caption {
+	color: #767676;
+}
+
+.wp-caption-text {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	box-sizing:         border-box;
+	font-size: 0.8em;
+	font-style: italic;
+	line-height: 1.5;
+	margin: 9px 0;
+	padding-right: 10px;
+}
+
+.wp-smiley {
+	border: 0;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Widgets */
+
+.widget ul { list-style: none outside none; margin-left: 0; }
+
+/* Assistive text */
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: auto;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	text-decoration: none;
+	text-transform: none;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+}
+
+.hide {
+	display: none;
+}
+
+/* simple clearfix */
+
+.clearfix:before, .clearfix:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+/**
+ * 2.0 Basic Structure
+ * -----------------------------------------------------------------------------
+ */
+
+.header-wrapper, .navigation-wrapper, .footer-wrapper { padding: 1em 0; }
+.main-wrapper { padding: 2em 0; }
+.site-info { font-size: 0.8em; text-align: center; padding: 15px 0; }
+
+/**
+ * 3.0 Header
+ * -----------------------------------------------------------------------------
+ */
+
+
+/**
+ * 4.0 Navigation
+ * -----------------------------------------------------------------------------
+ */
+
+.navigation-wrapper { background: #eee; }
+.menu-toggle { cursor: pointer; }
+.js .nav-menu.collapsed, .js .menu-main-menu-container.collapsed { display: none; }
+.nav-menu ul, ul.nav-menu, .menu-main-menu-container ul { margin: 0; list-style: none outside none; }
+
+
+/**
+ * 5.0 Content
+ * -----------------------------------------------------------------------------
+ */
+
+#primary .post { margin-bottom: 4em; }
+
+/**
+ * 6.0 Sidebars
+ * -----------------------------------------------------------------------------
+ */
+
+#secondary .widget { margin-bottom: 4em; }
+
+/**
+ * 7.0 Footer
+ * -----------------------------------------------------------------------------
+ */
+
+.footer-wrapper { background: #eee; }
+.footer-wrapper.fixed { position: fixed; left: 0; bottom: 0; width: 100%; }
+
+/**
+ * 8.0 Media Queries
+ * -----------------------------------------------------------------------------
+ */
+
+/* Does the same thing as <meta name="viewport" content="width=device-width">,
+ * but in the future W3C standard way. -ms- prefix is required for IE10+ to
+ * render responsive styling in Windows 8 "snapped" views; IE10+ does not honor
+ * the meta tag. See http://core.trac.wordpress.org/ticket/25888.
+ */
+@-ms-viewport {
+	width: device-width;
+}
+
+@viewport {
+	width: device-width;
+}
+
+@media screen and (min-width: 401px) {
+}
+
+@media screen and (min-width: 594px) {
+}
+
+@media screen and (min-width: 768px) {
+
+	.alignleft { float: left; margin: 0 20px 20px 0; }
+	.alignright { float: right; margin: 0 0 20px 20px; }
+
+	.menu-toggle { display: none; }
+	.js .nav-menu.collapsed, .js .menu-main-menu-container.collapsed { display: block; }
+	.nav-menu ul:after { content: ''; display: table; clear: both; }
+	.nav-menu li { display: block; margin: 0 2em 0 0; float: left; }
+}
+
+@media screen and (min-width: 992px) {
+
+}
+
+@media screen and (min-width: 1200px) {
+	.container { width: 980px; } /* overrides full-screen width from bootstrap */
+}
+
+
+
+
+/**
+ * 9.0 Print
+ * -----------------------------------------------------------------------------
+ */
+
+@media print {
+	body {
+		background: none !important; /* Brute force since user agents all print differently. */
+		color: #000;
+		font-size: 12pt;
+	}
+	.navigation-wrapper, #navigation { display: none; }
+}
