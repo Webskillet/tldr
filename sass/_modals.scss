@@ -3,11 +3,13 @@
 #modals-wrapper { display: none; position: fixed; top: 0; left: 0; bottom: 0; right: 0; opacity: 0; background: rgba(255, 255, 255, 0.8); @include transition-property(opacity); @include transition-duration(0.15s); @include transition-timing-function(linear); z-index: 314159; overflow-x: hidden; overflow-y: auto; }
 .modal-open #modals-wrapper { opacity: 1; }
 .modal-dismiss.primary { position: absolute; top: 6px; right: 10px; cursor: pointer; font-size: 2em; }
+.modal-dismiss.primary:before { content: '\f05c'; }
 
-#modals .block { display: none; background: #fff; }
-.modal-open #modals .block { opacity: 1; }
-#modals .block > h2 { background: $light-gray; margin: 0; padding: 10px 40px 10px 20px; }
-#modals .block > .content { padding: 10px 20px; border-bottom: 1px solid $light-gray; }
+#modals .widget { display: none; background: #fff; }
+.modal-open #modals .widget { opacity: 1; }
+#modals .widget > h2 { background: $light-gray; margin: 0; padding: 10px 40px 10px 20px; }
+#modals .widget > *:not(h2) { margin: 0; padding: 10px 20px; border-bottom: 1px solid $light-gray; }
+#modals .widget > ul { list-style: none outside none; }
 
 .modal-open { overflow: hidden; }
 
@@ -23,19 +25,21 @@ body { width: 100%; overflow-x: hidden; }
 .reveal-right #reveal-right-wrapper { z-index: 1; }
 .reveal-left.reveal-right #wrapper { left: 0; }
 .reveal-dismiss.primary { position: absolute; top: 5px; right: 5px; cursor: pointer; font-size: 2.4em; }
-.reveal .block { display: none; }
-.reveal .block > h2 { padding: 10px 20px; }
-.reveal .block > .content { padding: 10px 20px; }
+.reveal-dismiss.primary:before { content: '\f05c'; }
+.reveal .widget { display: none; }
+.reveal .widget > h2 { padding: 10px 20px; }
+.reveal .widget > *:not(h2) { margin: 0; padding: 10px 20px; }
+.reveal .widget > ul { list-style: none outside none; }
 
-.admin-menu .reveal { padding-top: 59px; }
-.admin-menu .reveal-dismiss.primary { top: 34px; }
+.admin-bar .reveal { padding-top: 59px; }
+.admin-bar .reveal-dismiss.primary { top: 34px; }
 
 // for iPads in portrait mode or larger, modals do not fill the entire screen, and primary dismiss button is fixed to the upper-right-hand corner of the screen
 @media screen and (min-width: 768px) {
 	.modal-dismiss.primary { position: fixed; top: 25px; right: 30px; font-size: 2.6667em; }
-	#modals .block { width: 600px; margin: 30px auto; }
-	#modals .block > h2 { padding: 10px 20px 9px; }
-	#modals .block > .content { padding: 10px 19px; border: 1px solid $light-gray; }
+	#modals .widget { width: 600px; margin: 30px auto; }
+	#modals .widget > h2 { padding: 10px 20px 9px; }
+	#modals .widget > *:not(h2) { margin: 0; padding: 10px 19px; border: 1px solid $light-gray; }
 
 	.reveal { padding-top: 40px; }
 }

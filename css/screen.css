@@ -115,102 +115,68 @@ dd ul, dd ol {
 }
 
 /* line 32, ../sass/_typography.scss */
-.item-list ul {
+nav ul {
   margin: 0;
-  padding: 0;
 }
 
 /* line 33, ../sass/_typography.scss */
-.item-list ul li {
+nav ul li {
   margin: 0;
   padding: 0;
-  list-style: none outside none;
 }
 
 /* line 34, ../sass/_typography.scss */
-ul.menu {
-  margin: 0;
-}
-
-/* line 35, ../sass/_typography.scss */
-ul.menu li {
-  margin: 0;
-  padding: 0;
-}
-
-/* line 36, ../sass/_typography.scss */
-ul.menu ul {
+nav ul ul {
   margin-left: 1.5em;
 }
 
 /* line 37, ../sass/_typography.scss */
-ul.inline, ul.links.inline {
-  clear: both;
-  margin: 0;
-}
-
-/* line 38, ../sass/_typography.scss */
-ul.inline li {
-  margin: 0;
-  padding: 0 1em 0 0;
-}
-
-/* line 39, ../sass/_typography.scss */
-ul.inline li.last {
-  padding: 0;
-}
-
-/* line 40, ../sass/_typography.scss */
-ul li.leaf, ul li.collapsed, ul li.expanded {
-  list-style: none outside none;
-}
-
-/* line 43, ../sass/_typography.scss */
 a {
   text-decoration: none;
 }
 
-/* line 44, ../sass/_typography.scss */
+/* line 38, ../sass/_typography.scss */
 a:link {
   color: #44889F;
 }
 
-/* line 45, ../sass/_typography.scss */
+/* line 39, ../sass/_typography.scss */
 a:visited {
   color: #44889F;
 }
 
-/* line 46, ../sass/_typography.scss */
+/* line 40, ../sass/_typography.scss */
 .no-touch a:hover {
   color: #A62A32;
 }
 
-/* line 47, ../sass/_typography.scss */
+/* line 41, ../sass/_typography.scss */
 a:active {
   color: #44889F;
 }
 
-/* line 50, ../sass/_typography.scss */
+/* line 44, ../sass/_typography.scss */
 img {
   max-width: 100%;
   height: auto !important;
 }
 
-/* line 51, ../sass/_typography.scss */
-.image-left,
-.image-right,
-.image-center {
+/* line 45, ../sass/_typography.scss */
+.alignleft,
+.alignright,
+.aligncenter {
   display: block;
   width: auto;
   margin: 0 auto 1.5em;
 }
 
-/* line 56, ../sass/_typography.scss */
+/* mobile-first: center everything; we'll align stuff later in the media queries */
+/* line 50, ../sass/_typography.scss */
 th, td {
   padding: 10px;
 }
 
-/* line 59, ../sass/_typography.scss */
+/* line 53, ../sass/_typography.scss */
 input, select, textarea {
   border: 1px solid #CCCCCC;
   color: #333333;
@@ -220,40 +186,40 @@ input, select, textarea {
   outline: 0;
 }
 
-/* line 60, ../sass/_typography.scss */
+/* line 54, ../sass/_typography.scss */
 input:focus, select:focus, textarea:focus {
   border-color: #333333;
 }
 
-/* line 61, ../sass/_typography.scss */
+/* line 55, ../sass/_typography.scss */
 input[type="checkbox"], input[type="radio"], input[type="submit"], input[type="image"] {
   width: auto;
 }
 
-/* line 62, ../sass/_typography.scss */
+/* line 56, ../sass/_typography.scss */
 input[type="image"] {
   border: 0;
   outline: invert none medium;
 }
 
-/* line 63, ../sass/_typography.scss */
+/* line 57, ../sass/_typography.scss */
 input[type="search"] {
   -webkit-appearance: none;
   moz-appearance: none;
 }
 
-/* line 64, ../sass/_typography.scss */
+/* line 58, ../sass/_typography.scss */
 input, select {
   max-width: 400px;
 }
 
-/* line 65, ../sass/_typography.scss */
+/* line 59, ../sass/_typography.scss */
 fieldset {
   margin: 2em 0;
   border-color: #CCCCCC;
 }
 
-/* line 66, ../sass/_typography.scss */
+/* line 60, ../sass/_typography.scss */
 legend {
   font: 1.333em Arial, "Helvetica Neue", Helvetica, sans-serif;
   color: #333;
@@ -262,22 +228,22 @@ legend {
   background: #EEEEEE;
 }
 
-/* line 67, ../sass/_typography.scss */
+/* line 61, ../sass/_typography.scss */
 legend + * {
   -webkit-margin-top-collapse: separate;
 }
 
-/* line 68, ../sass/_typography.scss */
+/* line 62, ../sass/_typography.scss */
 .form-type-checkbox label, .form-type-radio label {
   color: #999999;
 }
 
-/* line 69, ../sass/_typography.scss */
+/* line 63, ../sass/_typography.scss */
 input.form-checkbox:checked + label, input.form-radio:checked + label {
   color: #333333;
 }
 
-/* line 70, ../sass/_typography.scss */
+/* line 64, ../sass/_typography.scss */
 input[type="submit"], button, a.button {
   background: #EEEEEE;
   border-radius: 0;
@@ -289,168 +255,28 @@ input[type="submit"], button, a.button {
   cursor: pointer;
 }
 
-/* line 80, ../sass/_typography.scss */
+/* line 74, ../sass/_typography.scss */
 .no-touch input[type="submit"]:hover, .no-touch button:hover, .no-touch a.button:hover {
   background: #CCCCCC;
 }
 
-/* line 85, ../sass/_typography.scss */
-.form-item {
-  margin: 2em 0;
-}
-
-/* line 86, ../sass/_typography.scss */
-.form-item .description, .filter-guidelines {
-  font-size: 0.8em;
-  line-height: 1.1666em;
-  display: block;
-  clear: left;
-  color: #999999;
-  margin-top: 5px;
-}
-
-/* line 87, ../sass/_typography.scss */
-label {
-  font-weight: normal;
-}
-
-/* line 88, ../sass/_typography.scss */
-.webform-client-form .description, .fieldset-description {
-  margin-bottom: 1.5em;
-}
-
-/* line 89, ../sass/_typography.scss */
-.fieldset-description {
-  margin-top: 20px;
-}
-
-/* line 90, ../sass/_typography.scss */
-div.error, .error {
-  color: #A62A32;
-}
-
-/* line 91, ../sass/_typography.scss */
-.form-item input.error, .form-item textarea.error, .form-item select.error {
-  border: 1px solid #A62A32;
-  box-shadow: none;
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-}
-
-/* line 93, ../sass/_typography.scss */
-a.tabledrag-handle .handle {
-  box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-}
-
-/* line 95, ../sass/_typography.scss */
-.image-widget-data {
-  width: 100%;
-  max-width: 400px;
-}
-
-/* line 96, ../sass/_typography.scss */
-.form-managed-file .form-file {
-  width: 73%;
-}
-
-/* line 97, ../sass/_typography.scss */
-.form-managed-file .form-submit {
-  width: 25%;
-  margin-left: 2%;
-}
-
-/* line 99, ../sass/_typography.scss */
-.node-form .field-type-image table {
-  width: 100%;
-}
-
-/* line 100, ../sass/_typography.scss */
-.node-form .field-type-image td {
-  vertical-align: middle;
-}
-
-/* line 101, ../sass/_typography.scss */
-.node-form .field-type-image td .image-widget {
-  float: left;
-}
-
-/* line 103, ../sass/_typography.scss */
-.filter-wrapper .form-item {
-  margin: 0;
-}
-
-/* line 105, ../sass/_typography.scss */
-.vertical-tabs ul.vertical-tabs-list li {
-  font-size: 0.8em;
-  line-height: 1.167em;
-}
-
-/* line 106, ../sass/_typography.scss */
-.vertical-tabs ul.vertical-tabs-list li a {
-  padding: 1em 0.6em;
-}
-
-/* line 107, ../sass/_typography.scss */
-.vertical-tabs ul.vertical-tabs-list li a:hover {
-  outline: 0;
-}
-
-/* line 108, ../sass/_typography.scss */
-.vertical-tabs ul.vertical-tabs-list li a:hover,
-.vertical-tabs ul.vertical-tabs-list li a:active,
-.vertical-tabs ul.vertical-tabs-list li a:focus {
-  background: #F5F5F5;
-}
-
-/* line 111, ../sass/_typography.scss */
-.vertical-tabs ul.vertical-tabs-list li.selected a:hover,
-.vertical-tabs ul.vertical-tabs-list li.selected a:active,
-.vertical-tabs ul.vertical-tabs-list li.selected a:focus {
-  background: transparent;
-}
-
-/* line 114, ../sass/_typography.scss */
-.vertical-tabs ul.vertical-tabs-list li a:hover strong,
-.vertical-tabs ul.vertical-tabs-list li a:active strong,
-.vertical-tabs ul.vertical-tabs-list li a:focus strong {
-  text-decoration: none;
-}
-
-/* line 117, ../sass/_typography.scss */
-.vertical-tabs fieldset.vertical-tabs-pane {
-  font-size: 0.8em;
-  line-height: 1.167em;
-}
-
-/* line 118, ../sass/_typography.scss */
-.vertical-tabs fieldset.vertical-tabs-pane .form-item {
-  margin: 1em 0;
-}
-
-/* line 119, ../sass/_typography.scss */
-.vertical-tabs fieldset.vertical-tabs-pane .description {
-  font-size: 1em;
-}
-
 @media screen and (min-width: 768px) {
-  /* line 123, ../sass/_typography.scss */
-  .image-left {
+  /* line 80, ../sass/_typography.scss */
+  .alignleft {
     float: left;
     margin: 0 20px 20px 0;
     max-width: 50%;
   }
 
-  /* line 124, ../sass/_typography.scss */
-  .image-right {
+  /* line 81, ../sass/_typography.scss */
+  .alignright {
     float: right;
     margin: 0 0 20px 20px;
     max-width: 50%;
   }
 
-  /* line 125, ../sass/_typography.scss */
-  .image-center {
+  /* line 82, ../sass/_typography.scss */
+  .aligncenter {
     display: block;
     width: auto;
     margin: 0 auto 1.5em;
@@ -463,12 +289,6 @@ html, body {
 }
 
 /* line 2, ../sass/_structure.scss */
-body.admin-menu {
-  margin-top: 0 !important;
-  padding-top: 29px !important;
-}
-
-/* line 3, ../sass/_structure.scss */
 .chromeframe {
   margin: 0.2em 0;
   background: #CCCCCC;
@@ -476,7 +296,7 @@ body.admin-menu {
   padding: 0.2em 0;
 }
 
-/* line 4, ../sass/_structure.scss */
+/* line 3, ../sass/_structure.scss */
 #wrapper {
   width: 100%;
   min-height: 100%;
@@ -488,9 +308,47 @@ body.admin-menu {
   overflow-x: visible;
 }
 
-/* line 5, ../sass/_structure.scss */
-#skip-link {
+/* Assistive text */
+/* line 7, ../sass/_structure.scss */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
   position: absolute;
+}
+
+/* line 12, ../sass/_structure.scss */
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  height: auto;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  text-decoration: none;
+  text-transform: none;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar */
+}
+
+/* line 33, ../sass/_structure.scss */
+.hide {
+  display: none;
+}
+
+/* simple clearfix */
+/* line 39, ../sass/_structure.scss */
+.clearfix:before, .clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
 }
 
 /* 3.0 Headers and Highlighted */
@@ -522,7 +380,7 @@ nav ul {
 }
 
 /* line 7, ../sass/_navigation.scss */
-ul.main-menu li.menu-dismiss {
+.main-menu ul li.menu-dismiss {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -531,74 +389,92 @@ ul.main-menu li.menu-dismiss {
 }
 
 /* line 8, ../sass/_navigation.scss */
-#navigation ul.main-menu {
-  position: absolute;
-  left: -999em;
+.main-menu ul li.menu-dismiss:before {
+  content: '\f05c';
 }
 
 /* line 9, ../sass/_navigation.scss */
-#navigation ul.main-menu.open {
+#navigation .main-menu ul {
+  position: absolute;
+  left: -999em;
+  margin: 0;
+}
+
+/* line 10, ../sass/_navigation.scss */
+#navigation .main-menu ul.open {
   position: relative;
   left: auto;
 }
 
-/* line 10, ../sass/_navigation.scss */
-#navigation li ul.main-menu {
+/* line 11, ../sass/_navigation.scss */
+#navigation .main-menu li ul {
   clear: both;
   padding: 0 1em;
 }
 
-/* line 11, ../sass/_navigation.scss */
-#navigation ul.main-menu li {
+/* line 12, ../sass/_navigation.scss */
+#navigation .main-menu ul li {
   padding: 0;
 }
 
-/* line 12, ../sass/_navigation.scss */
-#navigation ul.main-menu li a, #navigation ul.main-menu li span.nolink, #navigation ul.main-menu li span.separator {
+/* line 13, ../sass/_navigation.scss */
+#navigation .main-menu ul li a, #navigation .main-menu ul li span.nolink, #navigation .main-menu ul li span.separator {
   display: block;
   padding: 0.5em 1em;
   line-height: 1em;
 }
 
-/* line 13, ../sass/_navigation.scss */
-#navigation ul.main-menu li.expanded > a, #navigation ul.main-menu li.expanded > span.nolink {
+/* line 14, ../sass/_navigation.scss */
+#navigation .main-menu ul li.page_item_has_children > a, #navigation .main-menu ul li.page_item_has_children > span.nolink,
+#navigation .main-menu ul li.menu-item-has-children > a, #navigation .main-menu ul li.menu-item-has-children > span.nolink {
   float: left;
   padding-right: 0.25em;
   cursor: pointer;
 }
 
-/* line 14, ../sass/_navigation.scss */
-#navigation ul.main-menu li.expanded:after {
+/* line 16, ../sass/_navigation.scss */
+#navigation .main-menu ul li.page_item_has_children:after,
+#navigation .main-menu ul li.menu-item-has-children:after {
   content: '';
   display: table;
   clear: both;
 }
 
-/* line 15, ../sass/_navigation.scss */
-#navigation ul.main-menu li.expanded ul {
+/* line 18, ../sass/_navigation.scss */
+#navigation .main-menu ul li.page_item_has_children ul,
+#navigation .main-menu ul li.menu-item-has-children ul {
   clear: both;
 }
 
-/* line 16, ../sass/_navigation.scss */
-#navigation ul.main-menu li .menu-toggle {
+/* line 20, ../sass/_navigation.scss */
+#navigation .main-menu ul li .menu-toggle {
   float: right;
   display: block;
   font-size: 1.333em;
   line-height: 0.5em;
-  margin: 0.3em 0;
+  margin: 0.5em 0;
   padding: 0 1em 0 0.33333em;
-  /* border-left: 1px solid $very-dark-gray; */
   cursor: pointer;
 }
 
-/* line 18, ../sass/_navigation.scss */
+/* line 21, ../sass/_navigation.scss */
+#navigation .main-menu ul li .menu-toggle.closed:before {
+  content: '\f0d7';
+}
+
+/* line 22, ../sass/_navigation.scss */
+#navigation .main-menu ul li .menu-toggle.open:before {
+  content: '\f0d8';
+}
+
+/* line 24, ../sass/_navigation.scss */
 #navigation ul.main-menu span.separator hr {
   margin: 0;
   border-color: #CCCCCC;
 }
 
-/* line 20, ../sass/_navigation.scss */
-.mobile-style-default #navigation > ul.main-menu {
+/* line 26, ../sass/_navigation.scss */
+.mobile-style-default #navigation .main-menu > ul {
   position: fixed;
   width: 300px;
   overflow-x: hidden;
@@ -621,102 +497,108 @@ ul.main-menu li.menu-dismiss {
   z-index: 500;
   background: #EEEEEE;
   font-size: 1.6em;
-}
-
-/* line 21, ../sass/_navigation.scss */
-.mobile-style-default #navigation ul.main-menu li a,
-.mobile-style-default #navigation ul.main-menu li span.nolink,
-.mobile-style-default #navigation ul.main-menu li span.separator {
-  padding: 0.5em 0.8333em;
-}
-
-/* line 24, ../sass/_navigation.scss */
-.mobile-style-default #navigation ul.main-menu li .menu-toggle {
-  padding-right: 0.8333em;
-}
-
-/* line 25, ../sass/_navigation.scss */
-.mobile-style-default #navigation ul.main-menu li {
-  border-bottom: 1px solid #CCCCCC;
-}
-
-/* line 26, ../sass/_navigation.scss */
-.mobile-style-default #navigation li ul.main-menu li {
-  border-bottom: none;
+  padding-top: 40px;
 }
 
 /* line 27, ../sass/_navigation.scss */
-.mobile-style-default #navigation ul.main-menu li.first {
+.mobile-style-default #navigation .main-menu ul li a,
+.mobile-style-default #navigation .main-menu ul li span.nolink,
+.mobile-style-default #navigation .main-menu ul li span.separator {
+  padding: 0.5em 0.8333em;
+}
+
+/* line 30, ../sass/_navigation.scss */
+.mobile-style-default #navigation .main-menu ul li .menu-toggle {
+  padding-right: 0.8333em;
+}
+
+/* line 31, ../sass/_navigation.scss */
+.mobile-style-default #navigation .main-menu ul li {
+  border-bottom: 1px solid #CCCCCC;
+}
+
+/* line 32, ../sass/_navigation.scss */
+.mobile-style-default #navigation .main-menu li ul li {
+  border-bottom: none;
+}
+
+/* line 33, ../sass/_navigation.scss */
+.mobile-style-default #navigation .main-menu ul li.first {
   padding-right: 2em;
 }
 
-/* line 28, ../sass/_navigation.scss */
-.mobile-style-default #navigation ul.main-menu li.menu-dismiss {
+/* line 34, ../sass/_navigation.scss */
+.mobile-style-default #navigation .main-menu ul li.menu-dismiss {
   font-size: 1.5em;
   border-bottom: none;
 }
 
-/* line 29, ../sass/_navigation.scss */
-.mobile-style-default #navigation > ul.main-menu.open {
+/* line 35, ../sass/_navigation.scss */
+.mobile-style-default #navigation .main-menu > ul.open {
   left: 0;
 }
 
-/* line 30, ../sass/_navigation.scss */
-.mobile-style-default #navigation ul.main-menu span.separator hr {
+/* line 36, ../sass/_navigation.scss */
+.mobile-style-default #navigation .main-menu ul span.separator hr {
   border-width: 3px;
 }
 
+/* line 38, ../sass/_navigation.scss */
+.mobile-style-basic .main-menu ul li.menu-dismiss {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
-  /* line 34, ../sass/_navigation.scss */
+  /* line 42, ../sass/_navigation.scss */
   #navigation {
     padding-top: 20px;
     padding-bottom: 20px;
   }
 
-  /* line 35, ../sass/_navigation.scss */
+  /* line 43, ../sass/_navigation.scss */
   #navigation .navigation-header {
     position: absolute;
     left: -999em;
   }
 
-  /* line 36, ../sass/_navigation.scss */
-  #navigation > ul.main-menu {
+  /* line 44, ../sass/_navigation.scss */
+  #navigation .main-menu > ul {
     background: #EEEEEE;
     z-index: 500;
     position: relative;
     left: auto;
   }
 
-  /* line 37, ../sass/_navigation.scss */
-  #navigation > ul.main-menu:after {
+  /* line 45, ../sass/_navigation.scss */
+  #navigation .main-menu > ul:after {
     content: '';
     display: table;
     clear: both;
   }
 
-  /* line 38, ../sass/_navigation.scss */
-  ul.main-menu li.menu-dismiss {
+  /* line 46, ../sass/_navigation.scss */
+  .main-menu ul li.menu-dismiss {
     display: none;
   }
 
-  /* line 39, ../sass/_navigation.scss */
-  #navigation ul.main-menu li {
+  /* line 47, ../sass/_navigation.scss */
+  #navigation .main-menu ul li {
     position: relative;
   }
 
-  /* line 40, ../sass/_navigation.scss */
+  /* line 48, ../sass/_navigation.scss */
   #navigation ul li {
     float: left;
     padding: 0;
   }
 
-  /* line 41, ../sass/_navigation.scss */
+  /* line 49, ../sass/_navigation.scss */
   #navigation li ul li {
     float: none;
   }
 
-  /* line 42, ../sass/_navigation.scss */
-  #navigation li ul.main-menu {
+  /* line 50, ../sass/_navigation.scss */
+  #navigation .main-menu li ul {
     position: absolute;
     left: -999em;
     top: 2em;
@@ -725,39 +607,44 @@ ul.main-menu li.menu-dismiss {
     z-index: 500;
   }
 
-  /* line 43, ../sass/_navigation.scss */
-  #navigation li ul.main-menu.open {
+  /* line 51, ../sass/_navigation.scss */
+  #navigation .main-menu li ul.open {
     position: absolute;
     left: auto;
     padding: 0;
   }
 
-  /* line 44, ../sass/_navigation.scss */
-  #navigation li ul li .menu-toggle .fa-caret-down:before {
+  /* line 52, ../sass/_navigation.scss */
+  #navigation .main-menu ul li .menu-toggle {
+    margin-top: 0.6em;
+  }
+
+  /* line 53, ../sass/_navigation.scss */
+  #navigation .main-menu li ul li .menu-toggle.closed:before {
     content: "\f0da";
   }
 
-  /* line 45, ../sass/_navigation.scss */
-  #navigation li ul li .menu-toggle .fa-caret-up:before {
+  /* line 54, ../sass/_navigation.scss */
+  #navigation .main-menu li ul li .menu-toggle.open:before {
     content: "\f0d9";
   }
 
-  /* line 46, ../sass/_navigation.scss */
-  #navigation li li ul.main-menu.open {
+  /* line 55, ../sass/_navigation.scss */
+  #navigation .main-menu li li ul.open {
     left: 100%;
     top: 0;
   }
 
-  /* line 47, ../sass/_navigation.scss */
-  #navigation > ul.main-menu > li > span.separator {
+  /* line 56, ../sass/_navigation.scss */
+  #navigation .main-menu > ul > li > span.separator {
     padding: 0;
     margin: 0.25em 0;
     height: 1.6em;
     border-left: 1px solid #CCCCCC;
   }
 
-  /* line 49, ../sass/_navigation.scss */
-  .mobile-style-default #navigation > ul.main-menu {
+  /* line 58, ../sass/_navigation.scss */
+  .mobile-style-default #navigation .main-menu > ul {
     width: auto;
     position: relative;
     top: auto;
@@ -765,393 +652,68 @@ ul.main-menu li.menu-dismiss {
     left: auto;
     overflow: visible;
     font-size: 1em;
-  }
-
-  /* line 50, ../sass/_navigation.scss */
-  .mobile-style-default #navigation ul.main-menu li {
-    border-bottom: none;
-  }
-
-  /* line 51, ../sass/_navigation.scss */
-  .mobile-style-default #navigation ul.main-menu li.first {
-    padding-right: 0;
-  }
-
-  /* line 52, ../sass/_navigation.scss */
-  .mobile-style-default #navigation > ul.main-menu.open {
-    left: auto;
-  }
-
-  /* line 53, ../sass/_navigation.scss */
-  .mobile-style-default #navigation ul.main-menu li a,
-  .mobile-style-default #navigation ul.main-menu li span.nolink,
-  .mobile-style-default #navigation ul.main-menu li span.separator {
-    padding: 0.5em 1em;
-  }
-
-  /* line 56, ../sass/_navigation.scss */
-  .mobile-style-default #navigation ul.main-menu li .menu-toggle {
-    padding-right: 1em;
-  }
-
-  /* line 57, ../sass/_navigation.scss */
-  .mobile-style-default #navigation ul.main-menu li.expanded > a,
-  .mobile-style-default #navigation ul.main-menu li.expanded > span.nolink {
-    padding-right: 0.25em;
+    padding-top: 0;
   }
 
   /* line 59, ../sass/_navigation.scss */
-  .mobile-style-default #navigation > ul.main-menu > li > span.separator {
-    padding: 0;
+  .mobile-style-default #navigation .main-menu ul li {
+    border-bottom: none;
   }
 
   /* line 60, ../sass/_navigation.scss */
-  .mobile-style-default #navigation ul.main-menu span.separator hr {
+  .mobile-style-default #navigation .main-menu ul li.first {
+    padding-right: 0;
+  }
+
+  /* line 61, ../sass/_navigation.scss */
+  .mobile-style-default #navigation .main-menu > ul.open {
+    left: auto;
+  }
+
+  /* line 62, ../sass/_navigation.scss */
+  .mobile-style-default #navigation .main-menu ul li a,
+  .mobile-style-default #navigation .main-menu ul li span.nolink,
+  .mobile-style-default #navigation .main-menu ul li span.separator {
+    padding: 0.5em 1em;
+  }
+
+  /* line 65, ../sass/_navigation.scss */
+  .mobile-style-default #navigation .main-menu ul li .menu-toggle {
+    padding-right: 1em;
+  }
+
+  /* line 66, ../sass/_navigation.scss */
+  .mobile-style-default #navigation .main-menu ul li.page_item_has_children > a,
+  .mobile-style-default #navigation .main-menu ul li.page_item_has_children > span.nolink,
+  .mobile-style-default #navigation .main-menu ul li.menu-item-has-children > a,
+  .mobile-style-default #navigation .main-menu ul li.menu-item-has-children > span.nolink {
+    padding-right: 0.25em;
+  }
+
+  /* line 70, ../sass/_navigation.scss */
+  .mobile-style-default #navigation .main-menu > ul > li > span.separator {
+    padding: 0;
+  }
+
+  /* line 71, ../sass/_navigation.scss */
+  .mobile-style-default #navigation .main-menu ul span.separator hr {
     border-width: 1px;
   }
 }
 /* 5.0 Content */
-/* 6.1 Messages */
-/* line 4, ../sass/_content.scss */
-div.messages {
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  margin: 0 0 2em;
-}
-
+/* 6.1 Posts */
 /* line 5, ../sass/_content.scss */
-div.messages ul {
-  list-style: none outside none;
-  padding: 0;
-  margin: 0;
+#primary .post {
+  margin-bottom: 4em;
 }
 
-/* line 6, ../sass/_content.scss */
-div.messages li {
-  margin-bottom: 1em;
-}
-
-/* line 7, ../sass/_content.scss */
-div.messages .close {
-  cursor: pointer;
-  float: right;
-  font-size: 2em;
-}
-
-/* line 8, ../sass/_content.scss */
-div.status, div.warning, div.error {
-  border-color: #CCCCCC;
-  background-color: #fff;
-}
-
-/* line 9, ../sass/_content.scss */
-div.status, .ok {
-  color: #333333;
-}
-
-/* 6.2 Admin tabs */
-/* line 12, ../sass/_content.scss */
-.tabs-wrapper {
-  margin: 1px 0 1.5em;
-}
-
-/* line 13, ../sass/_content.scss */
-ul.primary {
-  margin: 0;
-  padding: 1px 0 0;
-  border-bottom: none;
-}
-
-/* line 14, ../sass/_content.scss */
-ul.primary li {
-  display: block;
-  margin-bottom: 1em;
-  text-align: center;
-}
-
-/* line 15, ../sass/_content.scss */
-ul.primary li a {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  border-color: #CCCCCC;
-  border-bottom: 1px solid #CCCCCC;
-}
-
-/* line 16, ../sass/_content.scss */
-.no-touch ul.primary li a:hover {
-  border-color: #CCCCCC;
-  border-bottom: 1px solid #CCCCCC;
-}
-
-/* line 17, ../sass/_content.scss */
-ul.primary li.active a {
-  border-color: #CCCCCC;
-  border-bottom: 1px solid #CCCCCC;
-}
-
-/* 6.3 Nodes */
-/* line 21, ../sass/_content.scss */
-.node {
-  margin-bottom: 1.5em;
-}
-
-/* hide read more link in a way that doesn't screw up phones */
-/* line 24, ../sass/_content.scss */
-.node-readmore .element-invisible {
-  left: -999em;
-}
-
-/* social media links */
-/* line 27, ../sass/_content.scss */
-ul.btn-social {
-  margin: 0;
-  padding: 0;
-  height: 30px;
-}
-
-/* line 28, ../sass/_content.scss */
-.btn-social li {
-  float: left;
-  margin-right: 10px;
-  list-style: none outside none;
-  font-size: 1.333em;
-}
-
-/* line 29, ../sass/_content.scss */
-.btn-social li.last {
-  margin-right: 0;
-}
-
-/* line 30, ../sass/_content.scss */
-#page .share-links {
-  margin: 20px 0;
-}
-
-/* 6.4 Fields */
-/* line 33, ../sass/_content.scss */
-.field {
-  margin: 0 0 1.5em;
-}
-
-/* line 34, ../sass/_content.scss */
-.field-name-field-tags div {
-  display: inline;
-}
-
-/* line 35, ../sass/_content.scss */
-.field-name-field-tags .field-item {
-  margin: 0 1em 0 0;
-}
-
-/* line 36, ../sass/_content.scss */
-.video-container {
-  width: 100%;
-  position: relative;
-  padding: 0;
-  height: 0;
-  overflow: hidden;
-}
-
-/* line 43, ../sass/_content.scss */
-.video-container iframe,
-.video-container object,
-.video-container embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* 6.5 Profiles */
-/* line 54, ../sass/_content.scss */
-.profile {
-  margin: 1.5em 0;
-}
-
-/* line 55, ../sass/_content.scss */
-.profile h3 {
-  border: none;
-}
-
-/* line 56, ../sass/_content.scss */
-.profile dt {
-  margin-bottom: 0;
-}
-
-/* line 57, ../sass/_content.scss */
-.profile dd {
-  margin-bottom: 1.5em;
-}
-
-/* line 58, ../sass/_content.scss */
-.password-parent {
-  width: 36em;
-}
-
-/* 6.6 Comments */
-/* line 61, ../sass/_content.scss */
-#comments {
-  clear: both;
-  margin-top: 1.5em;
-}
-
-/* line 62, ../sass/_content.scss */
-.comment {
-  margin-bottom: 1.5em;
-}
-
-/* line 63, ../sass/_content.scss */
-.comment .new {
-  text-transform: capitalize;
-}
-
-/* 6.7 content formatting for specific pages */
-/* 6.7.1 search form & search results page */
-/* line 69, ../sass/_content.scss */
-#search-block-form {
-  position: relative;
-}
-
-/* line 70, ../sass/_content.scss */
-#search-block-form .form-item-search-block-form:after {
-  content: '\f002';
-  font-family: FontAwesome;
-  position: absolute;
-  top: 2px;
-  right: 8px;
-}
-
-/* line 71, ../sass/_content.scss */
-#search-block-form .form-item-search-block-form input {
-  padding: 5px 2em 5px 5px;
-  max-width: none;
-  margin: 0;
-}
-
-/* line 72, ../sass/_content.scss */
-#search-block-form input.form-submit {
-  position: absolute;
-  top: 4px;
-  right: 5px;
-  background: transparent;
-  outline: 0;
-  text-indent: -999em;
-  margin-right: 0;
-  padding: 0;
-  height: 100%;
-  width: 2em;
-}
-
-/* line 74, ../sass/_content.scss */
-.search-form .form-text {
-  width: 200px;
-}
-
-/* line 75, ../sass/_content.scss */
-.search-form #edit-basic, .search-form #edit-advanced {
-  margin-bottom: 3em;
-}
-
-/* line 76, ../sass/_content.scss */
-.search-results {
-  margin-left: 0;
-}
-
-/* line 77, ../sass/_content.scss */
-.search-results .search-snippet-info {
-  padding-left: 0;
-  border-bottom: 1px solid #CCCCCC;
-}
-
-/* line 78, ../sass/_content.scss */
-.search-results .search-info {
-  display: none;
-}
-
-/* line 79, ../sass/_content.scss */
-.page-search #block-system-main .content h2, .page-search404 #block-system-main h2 {
-  padding-bottom: 1.1em;
-  border-bottom: 1px solid #CCCCCC;
-}
-
-/* 6.8 Miscellaneous */
-/* line 84, ../sass/_content.scss */
-#context_ui_dialog-context-ui {
-  width: 570px;
-}
-
-/* line 85, ../sass/_content.scss */
-.context-ui-dialog-open {
-  right: -55px;
-}
-
-/* line 86, ../sass/_content.scss */
-.book-navigation .menu {
-  margin: 1em 0;
-}
-
-@media screen and (min-width: 768px) {
-  /* line 92, ../sass/_content.scss */
-  ul.primary {
-    border-bottom: 1px solid #CCCCCC;
-  }
-
-  /* line 93, ../sass/_content.scss */
-  ul.primary li {
-    display: inline;
-    margin-bottom: 0;
-  }
-
-  /* line 94, ../sass/_content.scss */
-  ul.primary li a {
-    -moz-border-radius-topleft: 8px;
-    -webkit-border-top-left-radius: 8px;
-    border-top-left-radius: 8px;
-    -moz-border-radius-topright: 8px;
-    -webkit-border-top-right-radius: 8px;
-    border-top-right-radius: 8px;
-    -moz-border-radius-bottomleft: 0;
-    -webkit-border-bottom-left-radius: 0;
-    border-bottom-left-radius: 0;
-    -moz-border-radius-bottomright: 0;
-    -webkit-border-bottom-right-radius: 0;
-    border-bottom-right-radius: 0;
-    background-color: #CCCCCC;
-    border-color: #CCCCCC;
-    padding: 2px 0.75em 0;
-  }
-
-  /* line 95, ../sass/_content.scss */
-  ul.primary li.active a {
-    background-color: #fff;
-    border-color: #CCCCCC #CCCCCC #fff;
-  }
-
-  /* line 96, ../sass/_content.scss */
-  .no-touch ul.primary li a:hover {
-    background-color: #fff;
-    border-color: #CCCCCC #CCCCCC #fff;
-    border-bottom: solid 1px #fff;
-  }
-
-  /* line 97, ../sass/_content.scss */
-  ul.secondary {
-    line-height: 3em;
-    margin: 0 0 -1px;
-    padding: 0;
-  }
-
-  /* line 98, ../sass/_content.scss */
-  ul.secondary a.active {
-    border-bottom: none;
-  }
-}
+/* 6.2 Comments */
+/* 6.3 content formatting for specific pages */
+/* 6.4 Miscellaneous */
+/* 6.5 Media Queries */
 /* 6.0 Sidebars */
 /* line 3, ../sass/_sidebars.scss */
-.sidebar .block {
+.sidebar .widget {
   margin-bottom: 2em;
 }
 
@@ -1164,35 +726,22 @@ ul.btn-social {
   bottom: 0;
 }
 
-/* line 4, ../sass/_footers.scss */
-#footer #site-credit {
-  text-align: center;
-}
-
 @media screen and (min-width: 768px) {
-  /* line 9, ../sass/_footers.scss */
-  #utility {
+  /* line 8, ../sass/_footers.scss */
+  .utility-wrapper {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
   }
 
-  /* line 10, ../sass/_footers.scss */
-  #utility .region, #utility-nav {
+  /* line 9, ../sass/_footers.scss */
+  #utility {
     position: relative;
   }
 
-  /* line 11, ../sass/_footers.scss */
-  #utility-menu-links {
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    display: block;
-  }
-
-  /* line 12, ../sass/_footers.scss */
-  #utility .block {
+  /* line 10, ../sass/_footers.scss */
+  #utility .widget {
     position: absolute;
   }
 }
@@ -1238,36 +787,47 @@ ul.btn-social {
   font-size: 2em;
 }
 
-/* line 7, ../sass/_modals.scss */
-#modals .block {
+/* line 6, ../sass/_modals.scss */
+.modal-dismiss.primary:before {
+  content: '\f05c';
+}
+
+/* line 8, ../sass/_modals.scss */
+#modals .widget {
   display: none;
   background: #fff;
 }
 
-/* line 8, ../sass/_modals.scss */
-.modal-open #modals .block {
+/* line 9, ../sass/_modals.scss */
+.modal-open #modals .widget {
   opacity: 1;
 }
 
-/* line 9, ../sass/_modals.scss */
-#modals .block > h2 {
+/* line 10, ../sass/_modals.scss */
+#modals .widget > h2 {
   background: #CCCCCC;
   margin: 0;
   padding: 10px 40px 10px 20px;
 }
 
-/* line 10, ../sass/_modals.scss */
-#modals .block > .content {
+/* line 11, ../sass/_modals.scss */
+#modals .widget > *:not(h2) {
+  margin: 0;
   padding: 10px 20px;
   border-bottom: 1px solid #CCCCCC;
 }
 
 /* line 12, ../sass/_modals.scss */
+#modals .widget > ul {
+  list-style: none outside none;
+}
+
+/* line 14, ../sass/_modals.scss */
 .modal-open {
   overflow: hidden;
 }
 
-/* line 14, ../sass/_modals.scss */
+/* line 16, ../sass/_modals.scss */
 .reveal {
   z-index: 0;
   position: fixed;
@@ -1280,23 +840,23 @@ ul.btn-social {
   padding-top: 30px;
 }
 
-/* line 15, ../sass/_modals.scss */
+/* line 17, ../sass/_modals.scss */
 #reveal-left-wrapper {
   left: 0;
 }
 
-/* line 16, ../sass/_modals.scss */
+/* line 18, ../sass/_modals.scss */
 #reveal-right-wrapper {
   right: 0;
 }
 
-/* line 17, ../sass/_modals.scss */
+/* line 19, ../sass/_modals.scss */
 body {
   width: 100%;
   overflow-x: hidden;
 }
 
-/* line 18, ../sass/_modals.scss */
+/* line 20, ../sass/_modals.scss */
 #wrapper {
   -moz-transition-property: left;
   -o-transition-property: left;
@@ -1312,7 +872,7 @@ body {
   transition-timing-function: linear;
 }
 
-/* line 19, ../sass/_modals.scss */
+/* line 21, ../sass/_modals.scss */
 .reveal-left, .reveal-right {
   width: 100%;
   height: 100%;
@@ -1320,32 +880,32 @@ body {
   overflow-y: auto;
 }
 
-/* line 20, ../sass/_modals.scss */
+/* line 22, ../sass/_modals.scss */
 .reveal-left #wrapper {
   left: 300px;
 }
 
-/* line 21, ../sass/_modals.scss */
+/* line 23, ../sass/_modals.scss */
 .reveal-left #reveal-left-wrapper {
   z-index: 1;
 }
 
-/* line 22, ../sass/_modals.scss */
+/* line 24, ../sass/_modals.scss */
 .reveal-right #wrapper {
   left: -300px;
 }
 
-/* line 23, ../sass/_modals.scss */
+/* line 25, ../sass/_modals.scss */
 .reveal-right #reveal-right-wrapper {
   z-index: 1;
 }
 
-/* line 24, ../sass/_modals.scss */
+/* line 26, ../sass/_modals.scss */
 .reveal-left.reveal-right #wrapper {
   left: 0;
 }
 
-/* line 25, ../sass/_modals.scss */
+/* line 27, ../sass/_modals.scss */
 .reveal-dismiss.primary {
   position: absolute;
   top: 5px;
@@ -1354,33 +914,44 @@ body {
   font-size: 2.4em;
 }
 
-/* line 26, ../sass/_modals.scss */
-.reveal .block {
+/* line 28, ../sass/_modals.scss */
+.reveal-dismiss.primary:before {
+  content: '\f05c';
+}
+
+/* line 29, ../sass/_modals.scss */
+.reveal .widget {
   display: none;
 }
 
-/* line 27, ../sass/_modals.scss */
-.reveal .block > h2 {
-  padding: 10px 20px;
-}
-
-/* line 28, ../sass/_modals.scss */
-.reveal .block > .content {
-  padding: 10px 20px;
-}
-
 /* line 30, ../sass/_modals.scss */
-.admin-menu .reveal {
-  padding-top: 59px;
+.reveal .widget > h2 {
+  padding: 10px 20px;
 }
 
 /* line 31, ../sass/_modals.scss */
-.admin-menu .reveal-dismiss.primary {
+.reveal .widget > *:not(h2) {
+  margin: 0;
+  padding: 10px 20px;
+}
+
+/* line 32, ../sass/_modals.scss */
+.reveal .widget > ul {
+  list-style: none outside none;
+}
+
+/* line 34, ../sass/_modals.scss */
+.admin-bar .reveal {
+  padding-top: 59px;
+}
+
+/* line 35, ../sass/_modals.scss */
+.admin-bar .reveal-dismiss.primary {
   top: 34px;
 }
 
 @media screen and (min-width: 768px) {
-  /* line 35, ../sass/_modals.scss */
+  /* line 39, ../sass/_modals.scss */
   .modal-dismiss.primary {
     position: fixed;
     top: 25px;
@@ -1388,24 +959,25 @@ body {
     font-size: 2.6667em;
   }
 
-  /* line 36, ../sass/_modals.scss */
-  #modals .block {
+  /* line 40, ../sass/_modals.scss */
+  #modals .widget {
     width: 600px;
     margin: 30px auto;
   }
 
-  /* line 37, ../sass/_modals.scss */
-  #modals .block > h2 {
+  /* line 41, ../sass/_modals.scss */
+  #modals .widget > h2 {
     padding: 10px 20px 9px;
   }
 
-  /* line 38, ../sass/_modals.scss */
-  #modals .block > .content {
+  /* line 42, ../sass/_modals.scss */
+  #modals .widget > *:not(h2) {
+    margin: 0;
     padding: 10px 19px;
     border: 1px solid #CCCCCC;
   }
 
-  /* line 40, ../sass/_modals.scss */
+  /* line 44, ../sass/_modals.scss */
   .reveal {
     padding-top: 40px;
   }

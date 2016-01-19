@@ -32,10 +32,13 @@
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed site">
 
-<div class="header-wrapper">
+<div id="header-wrapper">
 	<header id="header" class="site-header clearfix container" role="banner">
 		<div class="header-inner">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<hgroup class="site-name-slogan">
+				<h1 class="site-name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h2 class="site-slogan"><?php bloginfo( 'description' ); ?></h2>
+			</hgroup>
 
 <?php
 // search toggle for screen readers, add here if the search box is anywhere below the navigation
@@ -50,14 +53,24 @@
 	</header><!-- #header -->
 </div>
 
-<div class="navigation-wrapper">
+<div id="navigation-wrapper">
 	<nav id="navigation" class="site-navigation primary-navigation clearfix container" role="navigation">
 		<div class="navigation-inner">
-			<h1 class="menu-toggle"><?php tldr_navigation_title(); ?></h1>
+			<h2 class="navigation-header"><?php tldr_navigation_title(); ?></h2>
 			<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'tldr' ); ?></a>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'main-menu', 'container_class' => 'main-menu' ) ); ?>
 		</div>
 	</nav>
 </div>
+
+<?php if ( is_active_sidebar( 'highlighted' ) ) : ?>
+<div id="highlighted-wrapper">
+	<div id="highlighted" class="highlighted widget-area clearfix container" role="complementary">
+		<div class="highlighted-inner row">
+			<?php dynamic_sidebar( 'highlighted' ); ?>
+		</div>
+	</div><!-- #highlighted -->
+</div>
+<?php endif; ?>
 
 <div class="main-wrapper"><div id="main" class="clearfix container">
