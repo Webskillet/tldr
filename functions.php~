@@ -622,7 +622,7 @@ function tldr_theme_options_page() {
 	// This shows the page's name and an icon if one has been provided ?>
 
 	<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
-	<div class="updated notice is-dismissible"><p><strong><?php _e( 'Options saved' ); ?></strong></p></div>
+	<div class="updated notice is-dismissable"><p><strong><?php _e( 'Options saved' ); ?></strong></p></div>
 	<?php endif; // If the form has just been submitted, this shows the notification ?>
 
 	<form method="post" action="options.php">
