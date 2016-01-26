@@ -88,6 +88,7 @@ if ( version_compare( $GLOBALS['wp_version'], '3.6', '<' ) ) {
  */
 global $tldr_options;
 $tldr_options = array(
+	'logo_url' => '',
 	'navigation_style' => 'default',
 	'navigation_title' => 'Navigation',
 	'navigation_icon' => 'fa-bars',
@@ -477,6 +478,17 @@ add_action( 'wp_head', 'tldr_custom_js', 9 );
  * -----------------------------------------------------------
  */
 
+if ( ! function_exists( 'tldr_get_logo' ) ) :
+function tldr_get_logo() {
+	global $tldr_options;
+	$output = '';
+	if ($tldr_options['logo_url']) {
+		$output .= '<img src="'.$tldr_options['logo_url'].'" />';
+	}
+	return $output;
+}
+endif;
+
 if ( ! function_exists( 'tldr_navigation_title' ) ) :
 function tldr_navigation_title() {
 	global $tldr_options;
@@ -590,13 +602,52 @@ add_shortcode('html', 'tldr_html');
 
 if ( is_admin() ) : // Load only if we are viewing an admin page
 
+if ( ! function_exists('tldr_enqueue_admin_scripts') ) :
+function tldr_enqueue_admin_scripts(){
+	wp_register_script( 'tldr-admin-js', get_template_directory_uri() . '/js/admin.js', array ( 'jquery', 'media-upload', 'thickbox' ) );
+	wp_register_style( 'tldr-admin-css', get_template_directory_uri() . '/css/admin.css', array ( 'dashicons', 'wp-admin', 'buttons' ) );
+	if ( get_current_screen() -> id == 'appearance_page_theme_options' ) {
+
+		wp_enqueue_script('jquery');
+
+		wp_enqueue_script('thickbox');
+		wp_enqueue_style('thickbox');
+
+		wp_enqueue_script('media-upload');
+		wp_enqueue_script('tldr-admin-js');
+
+		wp_enqueue_style('tldr-admin-css');
+	}
+}
+endif;
+add_action( 'admin_enqueue_scripts', 'tldr_enqueue_admin_scripts' );
+
 if ( ! function_exists( 'tldr_register_options' ) ) :
 function tldr_register_options() {
+	global $pagenow;
+
 	// Register settings and call sanitation functions
 	register_setting( 'tldr_theme_options', 'tldr_options', 'tldr_validate_options' );
+
+	// set up text filter to change button on media uploader when we're choosing a logo
+	if ( $pagenow == 'media-upload.php' || $pagenow == 'async-upload.php' ) {
+		add_filter( 'gettext', 'tldr_replace_thickbox_text', 1, 3 );
+	}
 }
 endif;
 add_action( 'admin_init', 'tldr_register_options' );
+
+if ( ! function_exists( 'tldr_replace_thickbox_text' ) ) :
+function tldr_replace_thickbox_text($translated_text, $text, $domain) {
+	if ($text == 'Insert into Post') {
+		$referer = strpos( wp_get_referer(), 'tldr-settings' );
+		if ($referer !== false) {
+			return __('Select as logo', 'tldr' );
+		}
+	}
+	return $translated_text;
+}
+endif;
 
 if ( ! function_exists( 'tldr_theme_options' ) ) :
 function tldr_theme_options() {
@@ -635,6 +686,17 @@ function tldr_theme_options_page() {
 	and not somewhere else, very important for security */ ?>
 
 	<table class="form-table"><tbody>
+
+	<tr valign="top"><th scope="row"><label for="logo_url">Logo</label></th>
+	<td>
+	<div id="logo_url_preview" style="width: 100px; float: left; margin-right: 20px;<?php echo $settings['logo_url'] ? '' : ' display: none;'; ?>">
+		<?php if ($settings['logo_url']) : ?><img src="<?php echo esc_url($settings['logo_url']); ?>" style="max-width: 100%;" /><?php endif; ?>
+	</div>
+	<input type="text" id="logo_url" name="tldr_options[logo_url]" value="<?php echo esc_url($settings['logo_url']); ?>" />
+	<div style="margin-bottom: 5px;"><button class="button" id="logo_url_upload_button" style="display: none;"><span class="dashicons dashicons-upload"></span> Upload or choose <?php echo $settings['logo_url'] ? 'another ' : ''; ?>logo</button></div>
+	<div><button class="button" id="logo_url_delete_button"<?php echo $settings['logo_url'] ? '' : ' style="display: none;"'; ?>><span class="dashicons dashicons-no"></span> Remove logo</button></div>
+	</td>
+	</tr>
 
 	<tr valign="top"><th scope="row">Navigation</th>
 	<td>
@@ -748,7 +810,7 @@ function tldr_theme_options_page() {
 
 	</table>
 
-	<p class="submit"><input type="submit" class="button-primary" value="Save Options" /></p>
+	<p class="submit"><input type="submit" id="options-form-submit" class="button-primary" value="Save Options" /></p>
 
 	</form>
 
@@ -789,6 +851,8 @@ function tldr_validate_options( $input ) {
 	global $tldr_options;
 
 	$settings = get_option( 'tldr_options', $tldr_options );
+
+	$input['logo_url'] = esc_url( $input['logo_url'] );
 	
 	// We strip all tags from the text field, to avoid vulnerablilties like XSS
 	$input['google_fonts'] = wp_filter_nohtml_kses( $input['google_fonts'] );

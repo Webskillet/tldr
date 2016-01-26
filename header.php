@@ -35,6 +35,9 @@
 <div id="header-wrapper">
 	<header id="header" class="site-header clearfix container" role="banner">
 		<div class="header-inner">
+			<?php $logo = tldr_get_logo(); if ($logo) : ?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" id="logo"><?php echo $logo; ?></a>
+			<?php endif; ?>
 			<hgroup class="site-name-slogan">
 				<h1 class="site-name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<h2 class="site-slogan"><?php bloginfo( 'description' ); ?></h2>
