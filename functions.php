@@ -381,7 +381,6 @@ if ( ! function_exists( 'tldr_scripts' ) ) :
 function tldr_scripts() {
 	global $tldr_options;
 	$css_deps = array();
-	$js_deps = array( 'jquery' );
 
 	/**
 	 * css
@@ -435,13 +434,13 @@ function tldr_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	$js_deps[] = wp_enqueue_script( 'tldr-modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '20140213' );
-	$js_deps[] = wp_enqueue_script( 'tldr-fastclick', get_template_directory_uri() . '/js/fastclick.min.js', array(), '20160116' );
-	$js_deps[] = wp_enqueue_script( 'tldr-hammer', get_template_directory_uri() . '/js/hammer.min.js', array(), '20160116' );
+	wp_enqueue_script( 'tldr-modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '20140213' );
+	wp_enqueue_script( 'tldr-fastclick', get_template_directory_uri() . '/js/fastclick.min.js', array(), '20160116' );
+	wp_enqueue_script( 'tldr-hammer', get_template_directory_uri() . '/js/hammer.min.js', array(), '20160116' );
 	wp_enqueue_script( 'jquery' );
-	$js_deps[] = wp_enqueue_script( 'tldr-jquery-validate', get_template_directory_uri() . '/js/jquery.validate.js', array( 'jquery' ), '20160116' );
-	wp_enqueue_script( 'tldr-wsutil', get_template_directory_uri() . '/js/wsutil.js', $jsdeps, '20131209' );
-	$js_deps[] = wp_localize_script( 'tldr-wsutil', 'TLDRoptions', $tldr_options_js);
+	wp_enqueue_script( 'tldr-jquery-validate', get_template_directory_uri() . '/js/jquery.validate.js', array( 'jquery' ), '20160116' );
+	wp_enqueue_script( 'tldr-wsutil', get_template_directory_uri() . '/js/wsutil.js', array('tldr-modernizr', 'tldr-fastclick', 'tldr-hammer', 'jquery', 'tldr-jquery-validate'), '20160414' );
+	wp_localize_script( 'tldr-wsutil', 'TLDRoptions', $tldr_options_js);
 }
 endif;
 add_action( 'wp_enqueue_scripts', 'tldr_scripts' );
