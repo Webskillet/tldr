@@ -6,17 +6,17 @@ TL;DR is a base Wordpress theme developed by [Jonathan Kissam](http://jonathanki
 
 ### Shortcodes
 
-__[html]__: this shortcode allows the insertion of arbitary html code, removing the extra <p> and <br> tags inserted by the wpautop filter.
+__[html]__: this shortcode allows the insertion of arbitary html code, removing the extra &lt;p&gt; and &lt;br&gt; tags inserted by the wpautop filter.
 
 __[post-summary]__: this shortcode essentially inserts an implementation of [WP_Query](https://codex.wordpress.org/Class_Reference/WP_Query). Any of the WP_Query [parameters](https://codex.wordpress.org/Class_Reference/WP_Query#Parameters) can be implemented as an attribute of the shortcode, except for the __fields__ paramater and the parameters which require associative arrays: __tax_query__, __date_query__, __meta_query__ and the __orderby__ associative array option.
 
-The shortcode will display the post title (in <h2 class="post-summary-title">), if requested via custom attribute, the post thumbnail (in <div class="post-summary-thumbnail">), and the post content (in <div class="post-summary-content">). Each summary will be wrapped in a <div class="post-summary">.
+The shortcode will display the post title (in &lt;h2 class="post-summary-title"&gt;), if requested via custom attribute, the post thumbnail (in &lt;div class="post-summary-thumbnail"&gt;), and the post content (in &lt;div class="post-summary-content"&gt;). Each summary will be wrapped in a &lt;div class="post-summary"&gt;.
 
 Unless explicitly overridden, it will display all posts which meet the criteria, in descending date order - in other words, by default it will pass the following parameters to WP_Query:
 
-	orderby => 'date'
-	order => 'DESC'
-	posts_per_page => -1
+	orderby =&gt; 'date'
+	order =&gt; 'DESC'
+	posts_per_page =&gt; -1
 
 The shortcode will also _exclude_ any posts which have previously been displayed on the page using the p attribute to load a single post (i.e., __[post-summary p="123"]__). This allows the display of one or more summaries at the top of an otherwise ordered list.
 
