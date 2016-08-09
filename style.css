@@ -1,14 +1,13 @@
 /*
 Theme Name: TL;DR
+Theme URI: https://github.com/Webskillet/tldr
 Author: Jonathan Kissam
 Author URI: http://www.jonathankissam.com/
-Description: Base Theme for Wordpress
-Version: 1.2
+Description: Base (parent) theme for Wordpress. Responsive, includes "sidebars" for placing widgets in modals and side reveals.
+Version: 1.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
+Text Domain: tldr
 */
 
 

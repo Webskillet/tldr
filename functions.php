@@ -593,6 +593,140 @@ function tldr_html( $atts, $content ) {
 endif;
 add_shortcode('html', 'tldr_html');
 
+/**
+ * displays one or more summaries using WP_Query
+ * attributes can be any of the parameters for WP_Query:
+ * https://codex.wordpress.org/Class_Reference/WP_Query#Parameters
+ * EXCEPT fields and those which require associative arrays:
+ * tax_query, date_query, meta_query and the orderby array option
+ * parameters which take simple arrays should have arguments separated by commas
+ */
+if (! function_exists( 'tldr_post_summary' ) ) :
+function tldr_post_summary( $atts, $content ) {
+
+	// global variable so that individual posts aren't displayed multiple times
+	global $tldr_post_summaries_displayed;
+	if (!isset($tldr_post_summaries_displayed)) { $tldr_post_summaries_displayed = array(); }
+
+	$available_parameters = array(
+		'author',
+		'author_name',
+		'cat',
+		'category_name',
+		'tag',
+		'tag_id',
+		's',
+		'p',
+		'name',
+		'page_id',
+		'pagename',
+		'post_parent',
+		'has_password',
+		'post_password',
+		'nopaging',
+		'posts_per_page',
+		'posts_per_archive_page',
+		'offset',
+		'paged',
+		'page',
+		'ignore_sticky_posts',
+		'order',
+		'orderby',
+		'year',
+		'monthnum',
+		'w',
+		'day',
+		'hour',
+		'minute',
+		'second',
+		'm',
+		'meta_key',
+		'meta_value',
+		'meta_value_num',
+		'meta_compare',
+		'perm',
+		'post_mime_time',
+		'cache_results',
+		'update_post_meta_cache',
+		'update_post_term_cache',
+	);
+	$available_parameters_array = array(
+		'author__in',
+		'author__not_in',
+		'category__and',
+		'category__in',
+		'category__not_in',
+		'tag__and',
+		'tag__in',
+		'tag__not_in',
+		'tag_slug__and',
+		'tag_slug__in',
+		'post_parent__in',
+		'post_parent__not_in',
+		'post__in',
+		'post__not_in',
+		'post_name__in',
+		'post_type',
+		'post_status',
+	);
+
+	$params = array(
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'post__not_in' => $tldr_post_summaries_displayed,
+	);
+
+	foreach ( $available_parameters as $param_key) {
+		if ( isset($atts[$param_key]) ) {
+			$params[$param_key] = $atts[$param_key];
+		}
+	}
+
+	foreach ( $available_parameters_array as $param_key) {
+		if ( isset($atts[$param_key]) ) {
+			if ($param_key == 'post__not_in') {
+				$params['post__not_in'] = array_merge( $params['post__not_in'], explode(',',$atts['post__not_in']) );
+			} else {
+				$params[$param_key] = explode(',',$atts[$param_key]);
+			}
+		}
+	}
+
+	// special attributes: n, display_thumbnail, post_thumbnail_size, read_more
+	if (!isset($params['posts_per_page'])) {
+		$params['posts_per_page'] = isset($atts['n']) ? $atts['n'] : -1;
+	}
+	$display_thumbnail = isset($atts['display_thumbnail']) && $atts['display_thumbnail'];
+	$post_thumbnail_size = isset($atts['post_thumbnail_size']) ? $atts['post_thumbnail_size'] : 'post-thumbnail';
+	$readmore = isset($atts['read_more']) ? $atts['read_more'] : 'Read more';
+
+	$r = new WP_Query( $params );
+	if ($r->have_posts()) {
+		while ( $r->have_posts() ) {
+			$r->the_post();
+			$output .= '<div class="post-summary">';
+			$output .= '<h2 class="post-summary-title">'.get_the_title().'</h2>';
+			if ($display_thumbnail) {
+				$output .= '<div class="post-summary-thumbnail">'.get_the_post_thumbnail($r->ID, $post_thumbnail_size).'</div>';
+			}
+			$output .= '<div class="post-summary-content">'.apply_filters( 'the_content', get_the_content($readmore) ).'</div>';
+			$output .= '</div>';
+		}
+	}
+	wp_reset_postdata();
+
+	// add any 
+	if (isset($atts['p'])) {
+		$post_summarys_displayed = explode( ',' , $atts['p'] );
+		$tldr_post_summaries_displayed = array_merge( $tldr_post_summaries_displayed, $post_summarys_displayed );
+	}
+
+	return $output;
+
+}
+endif;
+add_shortcode( 'post-summary', 'tldr_post_summary' );
+
 
 /**
  * 6. Administration
