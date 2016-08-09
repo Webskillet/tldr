@@ -29,8 +29,8 @@ In addition, the shortcode offers several custom attributes:
 
 ## Development log
 
-1.3: 8/9/2016 Added __[post-summary]__ shortcode 8/9/2016
+__1.3__: 8/9/2016 Added `[post-summary]` shortcode
 
-1.2: 5/4/2016 Fixed error which was not loading scripts properly 
+__1.2__: 5/4/2016 Fixed error which was not loading scripts properly 
 
-1.1: 1/25/2016 Added support for uploading and/or selecting a logo, using the Wordpress media uploader. 
+__1.1__: 1/25/2016 Added support for uploading and/or selecting a logo, using the Wordpress media uploader. 
